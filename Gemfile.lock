@@ -133,6 +133,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -215,7 +216,7 @@ GEM
       thread_safe (~> 0.1)
     warden (1.2.8)
       rack (>= 2.0.6)
-    web-console (4.0.2)
+    web-console (4.0.3)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -249,6 +250,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.2)
   paperclip (~> 5.0.0)
+  pg
   pry
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
@@ -256,7 +258,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 1.4.2)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
