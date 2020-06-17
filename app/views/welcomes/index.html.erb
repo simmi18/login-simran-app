@@ -1,0 +1,50 @@
+<center>
+<h3>Home Services, On Demand</h3>
+</center>
+<%= form_tag(search_page_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <!--<div class="input-group-btn"> --> 
+      <%= button_tag "search", :class => 'btn btn-info',:name => nil%>  
+      <div class="input-group-btn"> 
+    </div>  
+  </div>  
+<% end %>
+
+
+
+<%= link_to "Add Service", new_service_path %>
+
+<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+
+<% @services.each do |service| %>
+<div class="card" style="width: 18rem;">
+  <!-- <img src="..." class="card-img-top" alt="..."> -->
+  <%= link_to image_tag(service.image.url, class: 'media-object'), service.image.url, target: '_blank', class: "card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= service.title %></h5>
+    <p class="card-text"><%= service.detail %></p>
+    <h5 class="card-title"><%= service.price %></h5>
+    <!-- <a href="#" class="btn btn-primary">Add Cart</a> -->
+    <%= link_to "Add Cart",'javascript:;', id: "simran_#{service.id}", class: "home-service-id" %>
+  </div>
+</div>
+  <% end %>
+
+<script>
+	$(document).ready(function(){
+		$(".home-service-id").on('click', function(){			
+			var welcome_page_id = $(this).attr('id')
+			var welcome_page_id = welcome_page_id.split('simran_')[1]
+			$.ajax({
+				url: "<%= carts_path %>",
+				type: "POST",
+				data: {
+					welcome_page_id: welcome_page_id
+				}
+			});
+		});
+	});
+</script>
+

@@ -1,0 +1,31 @@
+<% @services.each do |service| %>
+<div class="card" style="width: 18rem;">
+  <!-- <img src="..." class="card-img-top" alt="..."> -->
+  <%= link_to image_tag(service.image.url, class: 'media-object'), service.image.url, target: '_blank', class: "card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= service.title %></h5>
+    <p class="card-text"><%= service.detail %></p>
+    <h5 class="card-title"><%= service.price %></h5>
+    <!-- <a href="#" class="btn btn-primary">Add Cart</a> -->
+    <%= link_to "Add Cart",'javascript:;', id: "simran_#{service.id}", class: "home-service-id" %>
+  </div>
+</div>
+  <% end %>
+
+<script>
+	$(document).ready(function(){
+		$(".home-service-id").on('click', function(){			
+			var welcome_page_id = $(this).attr('id')
+			var welcome_page_id = welcome_page_id.split('simran_')[1]
+			$.ajax({
+				url: "<%= carts_path %>",
+				type: "POST",
+				data: {
+					welcome_page_id: welcome_page_id
+				}
+			});
+		});
+	});
+</script>
+
+
