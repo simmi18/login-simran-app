@@ -1,4 +1,7 @@
 <h3>Search Result</h3>  
 
-    <% @results.each do |result| %>   
+    <% @results.each do |result| %>  
+    <%= result.title %><br> 
+    <%= result.detail %><br>
+    <%= result.image %><br> 
     <% end %>
