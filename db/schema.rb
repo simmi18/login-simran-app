@@ -1,4 +1,3 @@
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_06_11_130519) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cart_items", force: :cascade do |t|
-    t.integer "cart_id"
-    t.integer "service_id"
+    t.bigint "cart_id"
+    t.bigint "service_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
@@ -23,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_130519) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
