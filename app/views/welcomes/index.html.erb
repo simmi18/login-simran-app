@@ -21,7 +21,7 @@
 <% @services.each do |service| %>
 <div class="card" style="width: 18rem;">
   <!-- <img src="..." class="card-img-top" alt="..."> -->
-  <%= link_to image_tag(service.image.url, class: 'media-object'), service.image.url, target: '_blank', class: "row" %>
+  <%= link_to image_tag(service.image.url, class: 'media-object'), service.image.url, target: '_blank', class: "row", width: "20%" %>
   <div class="card-body">
     <h5 class="card-title"><%= service.title %></h5>
     <p class="card-text"><%= service.detail %></p>

@@ -97,7 +97,22 @@ h1, h2, h3, h4, h5, h6, a {
   cursor:pointer;
 }
 
- 
+ /*for images */
+ .row{
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  float: right;
+  max-width: 25%;
+  padding: 0 4px;
+  display: flex;
+}
+
+.row img {
+  margin-top: 10px;
+  float: right;
+  vertical-align: middle;
+  width: 200%;
+}
 
 
 /*Media Querie*/

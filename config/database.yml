@@ -57,6 +57,7 @@ test:
 #
 production:
   <<: *default
-  database: system
-  username: simran
-  password: <%= ENV['LOGINAPP_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  #database: system
+  #username: simran
+  #password: <%= ENV['LOGINAPP_DATABASE_PASSWORD'] %>
