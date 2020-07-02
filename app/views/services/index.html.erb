@@ -1,18 +1,20 @@
-<% @services.each do |service| %>
+
+<% @services.each do |services| %>
 <div class="card" style="width: 18rem;">
   <!-- <img src="..." class="card-img-top" alt="..."> -->
-  <%= link_to image_tag(service.image.url, class: 'media-object'), service.image.url, target: '_blank', class: "row", width: "20%"%>
+  <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url, target: '_blank', class: "row", width: "20%"%>
   <div class="card-body">
-    <h5 class="card-title"><%= service.title %></h5>
-    <p class="card-text"><%= service.detail %></p>
-    <h5 class="card-title"><%= service.price %></h5>
+    <h5 class="card-title"><%= services.title %></h5>
+    <p class="card-text"><%= services.detail %></p>
+    <h5 class="card-title"><%= services.price %></h5>
     <!-- <a href="#" class="btn btn-primary">Add Cart</a> -->
-    <%= link_to "Add Cart",'javascript:;', id: "simran_#{service.id}", class: "home-service-id" %>
-  </div>
+    <%= link_to "Add Cart",'javascript:;', id: "simran_#{services.id}", class: "cart_items-id" %>
+   
+      </div>
 </div>
   <% end %>
 
-<script>
+<!--script>
 	$(document).ready(function(){
 		$(".home-service-id").on('click', function(){			
 			var welcome_page_id = $(this).attr('id')

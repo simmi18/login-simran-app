@@ -14,7 +14,7 @@
 			render "new"
 		end
 	end
-	private
+	
 	def service_params
 		params.require(:service).permit(:title, :detail, :price, :image)
 	end

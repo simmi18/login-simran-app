@@ -98,21 +98,35 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
  /*for images */
- .row{
+ .col{
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
   float: right;
   max-width: 25%;
-  padding: 0 4px;
+  padding-right: 0 4px ;
+  padding-left: 0 ;
+ /* padding: 0 4px; */
   display: flex;
 }
 
-.row img {
-  margin-top: 10px;
+.col img {
+  /*margin-top: 10px;
   float: right;
-  vertical-align: middle;
-  width: 200%;
+  vertical-align: right;
+  width: 200%; */
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
 }
+
+.btn btn-dark{
+  position: absolute;
+  right: -20px;
+  width: 100px;
+  height: 120px;
+  border: 3px solid blue;
+} 
 
 
 /*Media Querie*/

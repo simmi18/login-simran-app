@@ -1,7 +1,18 @@
-<h3>Search Result</h3>  
+<h3>Search Result</h3> 
+<div class="row">
+ <% @results.each do |result| %>  
+<div class="card" style="width: 18rem;">
+		<div class="card-body">
+		<%= image_tag result.image.url, class: "column", width: "20%" %>
+		<h5 class="card-title"><%= result.title %></h5>
+		<p class="card-detail"><%= result.detail %></p>
+		<h4 class="card-price"><%= result.price %></h4>
+</div>
+</div>
+<% end %>
+</div>
 
-    <% @results.each do |result| %>  
-    <%= result.title %><br> 
-    <%= result.detail %><br>
-    <%= result.image %><br> 
-    <% end %>
+
+
+    
+   

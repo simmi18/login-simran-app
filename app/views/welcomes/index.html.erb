@@ -1,33 +1,63 @@
 <center>
-<h3>Home Services,On demand</h3>
+<div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          select your city <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to "mubai", root_path%></li>
+        <li><%= link_to "link1", root_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li><%= link_to "link3", root_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+        <li class="divider"></li>
+        <li><%= link_to "link4", root_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
+      </ul>
+    </div>
 </center>
-<%= form_tag(search_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
+<!--- optional dropdown list -->
+
+
+<h1>
+	<center>Home services, On Demand</center>
+</h1>
+
+<!-- search bar -->
+<%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
     <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <!--<div class="input-group-btn"> --> 
-      <%= button_tag "search", :class => 'btn btn-info',:name => nil%>  
-      <div class="input-group-btn"> 
+    <div class="input-group-btn">  
+      <%= button_tag "search", :class => 'btn btn-dark',:name => nil%>  
     </div>  
   </div>  
+<% end %><br>
+
+
+<%- if has_role?(:admin) %>
+<button type="button" class="btn btn-dark">
+    <%= link_to 'Add More Services', new_service_path %>
+</button><br>
 <% end %>
-<%= link_to "Add Service", new_service_path %>
 
-<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 
-<% @services.each do |service| %>
-<div class="card" style="width: 18rem;">
+
+<br>
+<div class="row">
+<% @services.each do |services| %>
+<div class="card" style="width: 15rem;">
   <!-- <img src="..." class="card-img-top" alt="..."> -->
-  <%= link_to image_tag(service.image.url, class: 'media-object'), service.image.url, target: '_blank', class: "row", width: "20%" %>
-  <div class="card-body">
-    <h5 class="card-title"><%= service.title %></h5>
-    <p class="card-text"><%= service.detail %></p>
-    <h5 class="card-title"><%= service.price %></h5>
-    <!-- <a href="#" class="btn btn-primary">Add Cart</a> -->
-    <%= link_to "Add Cart",'javascript:;', id: "simran_#{service.id}", class: "home-service-id" %>
+   <h5 class="card-title"><%= services.title %></h5>
+    <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url, target: '_blank', class: "col", width: "20%"%>
+    <div class="card-body">
+      <!--<p class="card-text"><%= services.detail %></p>
+      <h5 class="card-title"><%= services.price %></h5>
+     <a href="#" class="btn btn-primary">Add Cart</a> -->
+      <button type="button" class="btn btn-dark">
+        <%= link_to "Add", 'javascript:;', id: "simran_#{services.id}", class: "home-service-id" %>
+        <%= link_to "Cart", carts_path %>
+      </button>
+    </div>
   </div>
+<% end %>
 </div>
-  <% end %>
+
 
 <script>
 	$(document).ready(function(){
@@ -45,3 +75,15 @@
 	});
 </script>
 
+
+
+<br>
+<center>
+<p> Logout Your Account</p>
+  <div class="column">
+    <button type="button" class="btn btn-dark">
+      <%= link_to 'logout', destroy_user_session_path, method: :delete%>
+    </button>
+  </div>
+
+</center>
