@@ -1,17 +1,16 @@
 <center>
 <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-          select your city <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><%= link_to "mubai", root_path%></li>
-        <li><%= link_to "link1", root_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
-        <li><%= link_to "link3", root_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
-        <li class="divider"></li>
-        <li><%= link_to "link4", root_path,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></li>
-      </ul>
-    </div>
-</center>
+      <span > 
+      <select  role="menu">
+       <option value="1"><%= link_to "select your city", root_path%></option>
+       <option value="2"><%= link_to "Delhi", root_path %></option>
+       <option value="3"><%= link_to "pune", root_path %></option>
+       <option value="4"><%= link_to "Mumbai", root_path %></option>
+        <option value="4"><%= link_to "Banglore", root_path %></option>
+      </select></span> 
+      
+</div>
+</center> 
 <!--- optional dropdown list -->
 
 
@@ -41,10 +40,10 @@
 <br>
 <div class="row">
 <% @services.each do |services| %>
-<div class="card" style="width: 15rem;">
+<div class="card" style="width: 15rem;"><br>
   <!-- <img src="..." class="card-img-top" alt="..."> -->
-   <h5 class="card-title"><%= services.title %></h5>
-    <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url, target: '_blank', class: "col", width: "20%"%>
+   <center><h5 class="card-title"><%= services.title %></h5></center> 
+    <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url, target: '_blank', class: "col", width: "20%"%><br>
     <div class="card-body">
       <!--<p class="card-text"><%= services.detail %></p>
       <h5 class="card-title"><%= services.price %></h5>
@@ -57,6 +56,7 @@
   </div>
 <% end %>
 </div>
+<br>  
 
 
 <script>
@@ -87,3 +87,4 @@
   </div>
 
 </center>
+
