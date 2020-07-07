@@ -43,7 +43,11 @@
 <div class="card" style="width: 15rem;"><br>
   <!-- <img src="..." class="card-img-top" alt="..."> -->
    <center><h5 class="card-title"><%= services.title %></h5></center> 
-    <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url, target: '_blank', class: "col", width: "20%"%><br>
+   <a href = "<%= detail_url(services) %> "
+    <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url,  class: "col", width: "20%"%>
+     </a> 
+    
+   <br>
     <div class="card-body">
       <!--<p class="card-text"><%= services.detail %></p>
       <h5 class="card-title"><%= services.price %></h5>
@@ -51,6 +55,7 @@
       <button type="button" class="btn btn-dark">
         <%= link_to "Add", 'javascript:;', id: "simran_#{services.id}", class: "home-service-id" %>
         <%= link_to "Cart", carts_path %>
+
       </button>
     </div>
   </div>

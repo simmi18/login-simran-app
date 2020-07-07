@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :carts
   resources :cart_items
   get '/search' => 'welcomes#search', :as => 'search_page'
-  
-
+  get '/details' => 'details#index', :as => 'details_page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
