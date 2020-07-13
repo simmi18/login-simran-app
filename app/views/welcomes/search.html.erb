@@ -5,11 +5,11 @@
 <div class="row">
  <% @results.each do |result| %>  
 <div class="card" style="width: 18rem;">
-		<div class="card-body">
-		<%= image_tag result.image.url, class: "column", width: "20%" %>
-		<h5 class="card-title"><%= result.title %></h5><br>
-		<p class="card-detail"><%= result.detail %></p><br>
-		<h4 class="card-price"><%= result.price %></h4><br>
+    <div class="card-body">
+    <%= image_tag result.image.url, class: "column", width: "20%" %>
+    <h5 class="card-title"><%= result.title %></h5><br>
+    <p class="card-detail"><%= result.detail %></p><br>
+    <h4 class="card-price"><%= result.price %></h4><br>
 </div>
 </div>
 <% end %>

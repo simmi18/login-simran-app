@@ -1,16 +1,21 @@
 <center><%= link_to "Back", root_path %></center>
+<h1> <center><%=  @service.title %></center>  
+</h1>
 
-<div class="page-wrap">
-	<h1>View All Services Details 
-	</h1>
-	<button type="button", class="btn1">
-	 <%= link_to "Exclusive Packages", details_page_path %>
-	 </button>
-	 <button type="button", class="btn1">
-	 <%= link_to "Facial & Hair services", details_page_path %>
-	 </button>
-</div>
 <footer class="site-footer">
-</footer>
+  <p><%= @service.detail %>
+    <h1> Recommende videro </h1>
+    <%=link_to nil,"https://www.youtube.com/watch?v=cnKZit6VB44" %>
+    <%= link_to nil,"https://www.youtube.com/watch?v=flU7chIYKFc"  %>
+  </p>
 
+   <!--button type="button", class="btn1">
+   </button-->
+
+   <button type="button", class="btn1">
+   <%=  @service.price %> 
+   </button>
+
+  <!--<div class="col img"> <%=  image_tag(@service.image.url)%></div> -->
+</footer>
 

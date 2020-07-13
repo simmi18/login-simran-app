@@ -1,10 +1,11 @@
+<center><h1>Welcome <%= current_user.name %></h1></center>
 <center>
 <div class="btn-group">
       <span > 
       <select  role="menu">
        <option value="1"><%= link_to "select your city", root_path%></option>
        <option value="2"><%= link_to "Delhi", root_path %></option>
-       <option value="3"><%= link_to "pune", root_path %></option>
+       <option value="3"><%= link_to "Pune", root_path %></option>
        <option value="4"><%= link_to "Mumbai", root_path %></option>
         <option value="4"><%= link_to "Banglore", root_path %></option>
       </select></span> 
@@ -15,7 +16,7 @@
 
 
 <h1>
-	<center>Home services, On Demand</center>
+  <center>Home services, On Demand</center>
 </h1>
 
 <!-- search bar -->
@@ -65,22 +66,20 @@
 
 
 <script>
-	$(document).ready(function(){
-		$(".home-service-id").on('click', function(){			
-			var welcome_page_id = $(this).attr('id')
-			var welcome_page_id = welcome_page_id.split('simran_')[1]
-			$.ajax({
-				url: "<%= carts_path %>",
-				type: "POST",
-				data: {
-					welcome_page_id: welcome_page_id
-				}
-			});
-		});
-	});
+  $(document).ready(function(){
+    $(".home-service-id").on('click', function(){     
+      var welcome_page_id = $(this).attr('id')
+      var welcome_page_id = welcome_page_id.split('simran_')[1]
+      $.ajax({
+        url: "<%= carts_path %>",
+        type: "POST",
+        data: {
+          welcome_page_id: welcome_page_id
+        }
+      });
+    });
+  });
 </script>
-
-
 
 <br>
 <center>

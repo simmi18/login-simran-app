@@ -3,13 +3,13 @@
 <h1>Your Cart Items List</h1>
 </center>
 <% @cart_items.each do |cart_item| %>
-		<div class="card" style="width: 18rem;"><br>
-		<div class="card-body"><br>
-		<%= image_tag cart_item.service.image.url, class: "column", width: "60%" %><br>
-		<br>
-		<h5 class="card-title"><%= cart_item.service.title %></h5><br>
-		<p class="card-detail"><%= cart_item.service.detail %></p><br>
-		<h4 class="card-price"><%= cart_item.service.price %></h4><br>
+    <div class="card" style="width: 18rem;"><br>
+    <div class="card-body"><br>
+    <%= image_tag cart_item.service.image.url, class: "column", width: "60%" %><br>
+    <br>
+    <h5 class="card-title"><%= cart_item.service.title %></h5><br>
+    <p class="card-detail"><%= cart_item.service.detail %></p><br>
+    <h4 class="card-price"><%= cart_item.service.price %></h4><br>
 </div>
 </div>
 <% end %>

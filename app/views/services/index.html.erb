@@ -1,13 +1,16 @@
-
+<h1><%= link_to "Back", root_path %></h1>
 <% @services.each do |services| %>
 <div class="card" style="width: 18rem;">
   <!-- <img src="..." class="card-img-top" alt="..."> -->
+ <div class="col img">
   <%= link_to image_tag(services.image.url, class: 'media-object'), services.image.url, target: '_blank', class: "row", width: "20%"%>
+</div>
   <div class="card-body">
     <h5 class="card-title"><%= services.title %></h5>
     <p class="card-text"><%= services.detail %></p>
     <h5 class="card-title"><%= services.price %></h5>
     <!-- <a href="#" class="btn btn-primary">Add Cart</a> -->
+    
     <%= link_to "Add Cart",'javascript:;', id: "simran_#{services.id}", class: "cart_items-id" %>
    
       </div>
@@ -15,19 +18,19 @@
   <% end %>
 
 <!--script>
-	$(document).ready(function(){
-		$(".home-service-id").on('click', function(){			
-			var welcome_page_id = $(this).attr('id')
-			var welcome_page_id = welcome_page_id.split('simran_')[1]
-			$.ajax({
-				url: "<%= carts_path %>",
-				type: "POST",
-				data: {
-					welcome_page_id: welcome_page_id
-				}
-			});
-		});
-	});
+  $(document).ready(function(){
+    $(".home-service-id").on('click', function(){     
+      var welcome_page_id = $(this).attr('id')
+      var welcome_page_id = welcome_page_id.split('simran_')[1]
+      $.ajax({
+        url: "<%= carts_path %>",
+        type: "POST",
+        data: {
+          welcome_page_id: welcome_page_id
+        }
+      });
+    });
+  });
 </script>
 
 
