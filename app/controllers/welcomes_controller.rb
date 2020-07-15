@@ -1,9 +1,14 @@
 class WelcomesController < ApplicationController
+
+  
   def index
     @services = Service.all
     
    
   end
+
+
+
  def user
  @user = User.find(params[:id]) 
  end

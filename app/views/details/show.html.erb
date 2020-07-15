@@ -1,16 +1,67 @@
-<%= link_to "Back", root_path %><h1> <center><%=  @service.title %></center>  
-</h1>
+<%= link_to "Back", root_path %>
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html>
+<body>
+  <div class="w3-container">
+    
+  <div class="w3-bar w3-black">
+    <% @offer.each do |k, v| %>
+      <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event, <%= k.to_s %>)"><%= k.capitalize %></button>
+    <% end %>
+  </div>
+   
+  <% @offer.each do |k, v| %>
+    
+    <div id="<%= k %>" class="w3-container w3-border city" style="display: <%=  k == :monday ? 'block' : 'none' %>" >
+      <h2><%= k.capitalize %></h2>
+      <p> Today offer </br>
+        <% v[:off].each do |s| %>
+          <%= s %>  
+        </br>
+        <% end %>  
+      </p>
+      <p> Recommende videro</br>
+        <% v[:ext].each do |n| %>
+          <%= n %>  
+          </br>
+        <% end %>  
+      </p>
+    </div>
+  <% end %>
+
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName.id).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+
+
+</script>
+
+  </body>
+</html>
+
+
 
 <footer class="site-footer">
-  <p><%= @service.detail %>
-    <h1> Recommende videro </h1>
-    <%=link_to nil,"https://www.youtube.com/watch?v=ykUNOlD3fDQ" %>
-    <%= link_to nil,"https://www.youtube.com/watch?v=s6NHxfKUkUo"  %>
-    <%= link_to nil, "https://www.youtube.com/watch?v=flU7chIYKFc&t=1s" %>
-    <%= link_to nil, "https://www.youtube.com/watch?v=BQFHmIf2dHg" %>
-    <%= link_to nil, "https://www.youtube.com/watch?v=CRXCB_3gLok" %>
-    <%= link_to nil, "https://www.youtube.com/watch?v=tZMMbbOTjmA " %>
-  </p>
+<h1><%= @service.title %></h1>
+  <p><%= @service.detail %></p>
+    
 
    <!--button type="button", class="btn1">
    </button-->
@@ -18,7 +69,8 @@
    <button type="button", class="btn1">
    <%=  @service.price %> 
    </button>
-
+   
   <!--<div class="col img"> <%=  image_tag(@service.image.url)%></div> -->
 </footer>
-
+<!--<div class="col img"> <%=  image_tag(@service.image.url)%></div> -->
+<button><%= link_to "next", details_page_path %></button>
