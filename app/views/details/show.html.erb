@@ -14,7 +14,7 @@
    
   <% @offer.each do |k, v| %>
     
-    <div id="<%= k %>" class="w3-container w3-border city" style="display: <%=  k == :monday ? 'block' : 'none' %>" >
+    <div id="<%= k %>" class="w3-container w3-border city" style="display: <%=  k == :cleaning ? 'block' : 'none' %>" >
       <h2><%= k.capitalize %></h2>
       <p> Today offer </br>
         <% v[:off].each do |s| %>
@@ -22,15 +22,15 @@
         </br>
         <% end %>  
       </p>
-      <p> Recommende videro</br>
+      <h1> Recommended videos</h1></br>
         <% v[:ext].each do |n| %>
           <%= n %>  
           </br>
         <% end %>  
-      </p>
+     
     </div>
   <% end %>
-
+  
 </div>
 
 
@@ -58,7 +58,7 @@ function openCity(evt, cityName) {
 
 
 
-<footer class="site-footer">
+
 <h1><%= @service.title %></h1>
   <p><%= @service.detail %></p>
     
@@ -71,6 +71,15 @@ function openCity(evt, cityName) {
    </button>
    
   <!--<div class="col img"> <%=  image_tag(@service.image.url)%></div> -->
-</footer>
+
 <!--<div class="col img"> <%=  image_tag(@service.image.url)%></div> -->
 <button><%= link_to "next", details_page_path %></button>
+<center>
+<p> Logout Your Account</p>
+  <div class="column">
+    <button type="button" class="btn btn-dark">
+      <%= link_to 'logout', destroy_user_session_path, method: :delete%>
+    </button>
+  </div>
+
+</center>

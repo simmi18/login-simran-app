@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6, a {
 
 /* stcky page */
 
-* { 
+/** { 
 margin: 0;
 }
 html, body { 
@@ -172,7 +172,7 @@ height: 100%;
 .page-wrap
 { min-height: 50%;
 /* equal to footer height */
-margin-bottom: -500px; 
+/*margin-bottom: -500px; 
 } 
 .page-wrap:after
 { 
@@ -185,6 +185,6 @@ height: 400px;
 margin-right: 900px; 
 } 
 .site-footer {
-background: gainsboro; 
+background:rosybrown; 
 }
- 
+ */
