@@ -29,7 +29,7 @@ gem 'cancancan'
 gem 'rolify'
 gem 'execjs'
 gem 'pry'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.2.0"
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 # Use Active Storage variant
