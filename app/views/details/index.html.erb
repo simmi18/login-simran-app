@@ -1,0 +1,36 @@
+<button type="button" class="btn btn-dark"> 
+	<%= link_to "Back To Home Page", root_path %>		
+</button>
+<button type="button" class="btn btn-dark">
+	<%= link_to "Activity", new_detail_path %>
+</button>   
+<br><br>
+<!-- <button type="button" class="btn btn-dark">
+	<%#= link_to "next", details_page_path %>
+</button> -->
+<button type="button" class="btn btn-dark">
+<%= link_to "New Author", new_author_path %>
+</button>
+<h1>Authors</h1>
+
+<table id="customers">
+    <tr>
+      <th>Author Name</th>
+      <th>Author Description</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+    <% @authors.each do |a| %>
+   <!--  <%# binding.pry %> -->
+    <tr>
+      <td><%= a.author_name %></td>
+      <td><%= a.author_description %></td>
+      <td><%= link_to "show", author_path(a) %></td>
+      <td><%= link_to "Edit", edit_author_path(a) %></td>
+      <td><%= link_to "Delete", author_path(a), method: :destroy ,data: { confirm: "Are you sure?" } %>
+      <!-- <td><%#= link_to "Destroy", author_path(a),method: :delete,data: { confirm: "Are you sure?" } %></td> -->
+    <% end %>
+
+
+</table>

@@ -1,0 +1,50 @@
+
+
+<div class="page-header">
+  <center>upload services</center>
+</div>
+
+<%= form_for @service, html: { multipart: true } do |f| %><br>
+  <% if @service.errors.any? %>
+    <div id="error_explanation"><br>
+      <h2>
+        <%= "#{pluralize(@service.errors.count, "error")} prohibited this photo from being saved:" %><br>
+      </h2>
+      <ul>
+        <% @service.errors.full_messages.each do |msg| %>
+          <li><br>
+            <%= msg %>
+          </li>
+          <% end %><br>
+      </ul><br>
+    </div>
+  <% end %>
+<br>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :detail %>
+    <%= f.text_area :detail, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: 'form-control' %>
+  </div>
+<br>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control' %>
+  </div>
+<br>
+  <div class="form-group">
+    <button type="button" class="btn btn-dark">
+        <%= f.submit 'Upload Photo', class: 'btn btn-default' %>
+      </button>
+    </div>
+    
+    <%= link_to "Cancel", root_path %>
+<% end %>

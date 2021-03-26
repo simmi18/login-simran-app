@@ -1,0 +1,280 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body {
+  background: lightcyan;
+  margin:0px;
+  font-family: 'Ubuntu', sans-serif;
+    background-size: 100% 110%;
+}
+h1, h2, h3, h4, h5, h6, a {
+  margin:0; padding:0;
+}
+
+ 
+
+
+.login {
+  margin:0 auto;
+  max-width:300px;
+}
+.login-header {
+  color:black;
+  text-align:center;
+  font-size:300%;
+}
+.login-header h1 {
+   text-shadow: 0px 5px 15px #000; 
+}
+.login-form {
+  border:.5px solid #a950e8;
+  background:lightskyblue;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+}
+.login-form h3 {
+  text-align:left;
+  margin-left:40px;
+  color:black;
+}
+.login-form {
+  box-sizing:border-box;
+  padding-top:15px;
+    padding-bottom:10%;
+  margin:5% auto;
+  text-align:center;
+}
+
+.login input {
+  max-width:400px;
+    width: 80%;
+  line-height:3em;
+  font-family: 'Ubuntu', sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+}
+.login-form input[type="button"] {
+  height:30px;
+  width:100px;
+  background:lightskyblue;
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: slategrey;
+  text-transform:uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  cursor:pointer;
+}
+.sign-up{
+  color:#f2f2f2;
+  margin-left:-70%;
+  cursor:pointer;
+  text-decoration:underline;
+}
+.no-access {
+  color:#a950e8;
+  margin:20px 0px 20px -57%;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.try-again {
+  color:#a950e8;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+ /*for images */
+ .col{
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  float: right;
+  max-width: 25%;
+  padding-right: 0 4px ;
+  padding-left: 0 ;
+ /* padding: 0 4px; */
+  display: flex;
+}
+
+.col img {
+  /*margin-top: 10px;
+  float: right;
+  vertical-align: right;
+  width: 200%; */
+  margin: 2px;
+  border: 2px solid #ccc;
+  float: left;
+  width: 180px;
+  height: 150px;
+}
+
+.btn btn-dark{
+  position: absolute;
+  right: -20px;
+  width: 100px;
+  height: 120px;
+  border: 3px solid blue;
+} 
+
+
+/* button deatils page */
+.btn1 {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 20px;
+  cursor: pointer;
+   border-radius: 15px;
+}
+
+
+/*Media Querie*/
+@media only screen and (min-width : 150px) and (max-width : 530px){
+  .login-form h3 {
+    text-align:center;
+    margin:0;
+  }
+  .sign-up, .no-access {
+    margin:10px 0;
+  }
+  .login-button {
+    margin-bottom:10px;
+  }
+}
+
+.p1 {
+  background-color: white ;
+  color: black;
+}
+
+
+/* stcky page */
+
+/** { 
+margin: 0;
+}
+html, body { 
+height: 100%; 
+}
+.page-wrap
+{ min-height: 50%;
+/* equal to footer height */
+/*margin-bottom: -500px; 
+} 
+.page-wrap:after
+{ 
+content: ""; display: block;
+}
+.site-footer, .page-wrap:after
+{ 
+
+height: 400px;
+margin-right: 900px; 
+} 
+.site-footer {
+background:rosybrown; 
+}
+ */
+
+
+
+ #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/New Article css property/
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
