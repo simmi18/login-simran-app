@@ -1,16 +1,35 @@
 <button type="button" class="btn btn-dark"> 
 	<%= link_to "Back To Home Page", root_path %>		
 </button>
+
+<%- if has_role?(:admin) %>
 <button type="button" class="btn btn-dark">
-	<%= link_to "Activity", new_detail_path %>
-</button>   
+    <%= link_to 'Add Details',new_detail_path %>
+</button><br>
+<% end %>
+<br>
+<%#- if has_role?(:admin) %>
+<!-- <button type="button" class="btn btn-dark">
+    <%#= link_to 'Authors', details_path %>
+</button> -->
+
+<!-- <button type="button" class="btn btn-dark">
+	<%#= link_to "Activity", new_detail_path %>
+</button>  -->  
 <br><br>
 <!-- <button type="button" class="btn btn-dark">
 	<%#= link_to "next", details_page_path %>
 </button> -->
+<%- if has_role?(:admin) %>
 <button type="button" class="btn btn-dark">
 <%= link_to "New Author", new_author_path %>
 </button>
+<% end %>
+<%- if has_role?(:admin) %> 
+<button type="button" class="btn btn-dark">
+    <%= link_to 'New Book', new_book_path %>
+</button>
+<% end %>
 <h1>Authors</h1>
 
 <table id="customers">
@@ -26,11 +45,15 @@
     <tr>
       <td><%= a.author_name %></td>
       <td><%= a.author_description %></td>
+      <%- if has_role?(:admin) %> 
       <td><%= link_to "show", author_path(a) %></td>
       <td><%= link_to "Edit", edit_author_path(a) %></td>
       <td><%= link_to "Delete", author_path(a), method: :destroy ,data: { confirm: "Are you sure?" } %>
+        <% end %>
       <!-- <td><%#= link_to "Destroy", author_path(a),method: :delete,data: { confirm: "Are you sure?" } %></td> -->
     <% end %>
+    </table>
 
 
-</table>
+    
+

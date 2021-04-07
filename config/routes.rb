@@ -15,4 +15,10 @@ end
   resources :authors
    get '/authors/:id', action: :delete, controller: 'authors'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-end
+   resources :books
+   # get 'books' => 'books#index'
+   # get 'book/new' => 'books#new' #controlleraction
+   # post 'book/new' => 'books#create'
+ end
+
+

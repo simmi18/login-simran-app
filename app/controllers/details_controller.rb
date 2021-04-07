@@ -4,9 +4,11 @@ class DetailsController < ApplicationController
     @details = Detail.all
     @authors = Author.all
     @service = Service.all
+    @book = Book.all
       end
   def show
     @service = Service.find(params[:id])
+     @book = Book.all
      end
   #      def set_offer
   #   @offer = {}

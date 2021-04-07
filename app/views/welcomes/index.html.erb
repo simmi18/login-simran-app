@@ -36,16 +36,19 @@
 </button><br>
 <% end %>
 
-<%- if has_role?(:admin) %>
-<button type="button" class="btn btn-dark">
-    <%= link_to 'Add Details', details_path %>
-</button><br>
-<% end %>
+<%#- if has_role?(:admin) %>
+<!-- <button type="button" class="btn btn-dark">
+    <%#= link_to 'Add Details', details_path %>
+</button><br> -->
+<%# end %>
 <br>
 <%#- if has_role?(:admin) %>
 <button type="button" class="btn btn-dark">
-    <%= link_to 'Authors', details_path %>
+    <%= link_to 'Authors List', details_path %>
 </button>
+<!-- <button type="button" class="btn btn-dark">
+    <%#= link_to 'Book', books_path %>
+</button> -->
 <div class="row">
 <%# end %>
 <% @services.each do |services| %>
@@ -67,6 +70,7 @@
         <%= link_to "Cart", carts_path %>
       </div>
       </button>
+      
     </div>
   </div>
 <% end %>

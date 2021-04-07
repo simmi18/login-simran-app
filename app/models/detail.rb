@@ -3,8 +3,8 @@ class Detail < ApplicationRecord
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 	belongs_to :service
 	
-	# validates :name,  :presence => true
- #  validates :title, :presence => true,
- #                    :length => { :minimum => 5 }
+	validates :name,  :presence => true
+  validates :title, :presence => true,
+                    :length => { :minimum => 5 }
 resourcify
 end

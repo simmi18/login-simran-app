@@ -4,6 +4,7 @@ class WelcomesController < ApplicationController
 
 
   def index
+    @user = User.all
     @services = Service.all
   end
 
@@ -25,3 +26,6 @@ class WelcomesController < ApplicationController
     end  
   end
 end
+
+
+959450 
