@@ -1,8 +1,12 @@
- <center>
- 	<%# binding.pry %>
- 	<%= image_tag @book.image.url, class: "column", width: "20%" %></center>
- <h2><%= @book.book_name %></h2>
-  <p1><%= @book.book_descriptions %></p1>
+ <button type="button" class="btn btn-dark"> 
+  <%= link_to "Back To Home Page", root_path %>   
+</button>
+<center>
+    <%# binding.pry %>
+<%= image_tag @book.image.url, class: "column", width: "20%" %>
+</center>
+<h3><%= @book.author_id %></h3>
+<h2><%= @book.book_name %></h2>
+<p1><%= @book.book_descriptions %></p1> 
  
-  <br><div class="column">
    

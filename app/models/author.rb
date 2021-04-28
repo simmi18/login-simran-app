@@ -1,4 +1,5 @@
 class Author < ApplicationRecord
+  has_many :books
 # after_validation :set_status
   #  before_save :check_name_has_value
   # scope :check_name_length, ->{ where("LENGTH(name) > 5 ") }
